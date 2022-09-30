@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block jumbotrontitle %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+研究室へようこそ
+{% endblock %}
+
+{% block jumbotroncontent %}
+<br>
+<div class="jumbotron">
+    <form action="#" method="post" class="display-4">
+    <p class="lead">名前:</p>
+    <p class="lead"><input type="text" name="nm" /></p>
+    <p class="lead"><input type="submit" value="送信" /></p>
+    </form>
+</div>
+{% endblock %}
+
+{% block tester %}
+{% endblock %}

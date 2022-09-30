@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+Hi {{ user }}
+{% endblock %}
+
+{% block jumbotrontitle %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+Welcome to the laboratory.
+{% endblock %}
+
+{% block jumbotroncontent %}
+<br>
+<div class="jumbotron">
+    <form action="#" method="post" class="display-4">
+    <p class="lead">{{user}} : {{email}}</p>
+    <p class="lead"><input type="submit" name="logout" value="Log Out" /></p>
+    </form>
+</div>
+{% endblock %}
+
+{% block tester %}
+<form action="#" method="POST">
+    <input type="email" name="email" placeholder="Enter email" value="{{email if email}}"/>
+    <input type="submit" name="email_submit" value="submit"/>
+</form>
+{% endblock %}
